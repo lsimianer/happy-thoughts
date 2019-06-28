@@ -1,4 +1,5 @@
 var mysql = require("mysql");
+var env = require(".env").config();
 
 var connection = mysql.createConnection({
   host: "localhost",
@@ -10,8 +11,8 @@ var connection = mysql.createConnection({
   user: "root",
 
   // Your password
-  password: "Shamwow1!",
-  database: "playlist_db"
+  database: process.env.DB_PASSWORD,
+  database: "happy db"
 });
 
 connection.connect(function(err) {
